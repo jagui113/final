@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>final</title>
+  <style>
+.boxes {
+  height: 50px; width: 50px;
+  background-color: #aaaaaa;
+}
+.sliderbox {
+  width: 200px;
+}
+.textbox {
+  font-size: 18pt;
+  font-family: sans-serif;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+  </style>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("#div1").fadeToggle();
+        $("#div2").fadeToggle();
+        $("#div3").fadeToggle();
+        $("#div4").fadeToggle();
+        $("#div5").fadeToggle();
+        $("#div6").fadeToggle();
+        $("#div7").fadeToggle();
+    });
+});
+</script>
+<!-- SLIDER FUNCTIONS -->
+<script>
+$( function() {
+  $( "#slider" ).slider({
+    value:4,
+    min: 1,
+    max: 7,
+    step: 1,
+    slide: function( event, ui ) {
+      $( "#amount" ).val( "# " + ui.value );
+    }
+  });
+  $( "#amount" ).val( "# " + $( "#slider" ).slider( "value" ) );
+} );
+</script>
+</head>
+<body>
+
+<p>boxes & slider </p>
+
+<button>Click to fade in/out boxes</button><br><br>
+
+
+<div id="boxes" class="center" style="background-color:grey; padding:10px;">
+<table style="">
+<tr>
+
+<td style="padding:5px;">
+<div id="div1" style="width:80px;height:80px;display:none;background-color:red;border:2px solid white;"></div>
+</td>
+
+<td style="padding:5px;">
+<div id="div2" style="width:80px;height:80px;display:none;background-color:orange;border:2px solid white;"></div>
+</td>
+
+<td style="padding:5px;">
+<div id="div3" style="width:80px;height:80px;display:none;background-color:yellow;border:2px solid white;"></div>
+</td>
+
+<td style="padding:5px;">
+<div id="div4" style="width:80px;height:80px;display:none;background-color:green;border:2px solid white;"></div>
+</td>
+
+<td style="padding:5px;">
+<div id="div5" style="width:80px;height:80px;display:none;background-color:blue;border:2px solid white;"></div>
+</td>
+
+<td style="padding:5px;">
+<div id="div6" style="width:80px;height:80px;display:none;background-color:indigo;border:2px solid white;"></div>
+</td>
+
+<td style="padding:5px;">
+<div id="div7" style="width:80px;height:80px;display:none;background-color:violet;border:2px solid white;"></div>
+</td>
+</table>
+<table>
+  <!-- / /////// BOX TABLE ENDS ////// -->
+</tr>
+  <tr>
+    <td colspan="3" style="background-color:grey; padding:10px; width: 33%">
+     <div id="slider"></div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <p>
+       <label for="amount" style="color:white;"> Value: </style></label>
+       <input type="text" id="amount" readonly style="border:0; color:#3e3f3a; font-weight:bold;">
+      </p>
+    </td>
+  </tr>
+</table>
+</div>
+<br/>
+
+</body>
+</html>
